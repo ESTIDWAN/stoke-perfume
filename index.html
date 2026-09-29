@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perfumería Jessik · Perfumes árabes y americanos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header class="top"><a class="logo" href="#">Mejores Perfumes</a>
+<nav><a href="#catalogo">Catálogo</a><a href="#servicios">Servicios</a><button class="cartbtn" id="open">Carrito (<span id="cnt">0</span>)</button></nav></header>
+
+<div class="hero">
+  <a class="half ar" id="hAr" href="#catalogo" data-go="arabe"><h1>Árabes</h1><p>Oud, ámbar, rosa y especias. Intensos y de larga duración.</p><span>Ver perfumes árabes</span></a>
+  <a class="half us" id="hUs" href="#catalogo" data-go="americano"><h1>Americanos</h1><p>Frescos, limpios y fáciles de usar todos los días.</p><span>Ver perfumes americanos</span></a>
+</div>
+<p class="tag">Dos tradiciones, una sola tienda.</p>
+
+<section id="catalogo"><div class="wrap">
+  <h2>Catálogo</h2><p class="sub">Agrega al carrito y envía tu pedido por WhatsApp.</p>
+  <div class="tabs" role="group" aria-label="Filtrar por origen">
+    <button data-f="todos" aria-pressed="true">Todos</button><button data-f="arabe" aria-pressed="false">Árabes</button><button data-f="americano" aria-pressed="false">Americanos</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="servicios" class="services"><div class="wrap"><h2>Servicios</h2><p class="sub">Comprar un perfume tiene que ser fácil.</p>
+  <div class="svc">
+    <div><h3>Asesoría personalizada</h3><p>Cuéntanos qué aromas te gustan y para qué ocasión, y te recomendamos el indicado.</p></div>
+    <div><h3>Decants y muestras</h3><p>Prueba una cantidad pequeña antes de comprar el frasco completo.</p></div>
+    <div><h3>Envíos a todo el país</h3><p>Empaque protegido y guía de seguimiento.</p></div>
+    <div><h3>Regalos</h3><p>Caja de regalo y tarjeta con tu mensaje.</p></div>
+  </div></div></section>
+
+<section id="admin" hidden><div class="wrap">
+  <h2>Panel del dueño</h2>
+  <p class="sub">Los datos se guardan solo en este navegador. Los clientes no los ven.</p>
+  <h3>Inventario</h3><div class="wide"><table id="inv"></table></div>
+  <h3 style="margin-top:28px">Registrar pedido</h3>
+  <div class="grid2"><input id="oc" placeholder="Nombre del cliente"><select id="op"></select><input id="oq" type="number" min="1" value="1"><button class="btn" id="oadd">Guardar y descontar stock</button></div>
+  <h3 style="margin-top:28px">Pedidos</h3><div class="wide"><table id="ords"></table></div>
+  <p><button class="btn alt" id="exp">Copiar stock actual</button> <span id="expmsg"></span></p>
+</div></section>
+
+<footer>© Perfumería Dos Orillas · <a href="#admin" id="adminlink">Panel</a></footer>
+
+<aside id="drawer" aria-label="Carrito" aria-hidden="true">
+  <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:1.5rem">Tu pedido</h2><button class="btn alt" id="close">Cerrar</button></div>
+  <div id="lines"></div>
+  <p style="font-weight:600;font-size:1.1rem">Total: <span id="tot">$0</span></p>
+  <input id="cn" placeholder="Tu nombre"><input id="cc" placeholder="Ciudad y dirección de envío">
+  <p id="msg" role="alert"></p>
+  <button class="btn" id="send">Enviar pedido por WhatsApp</button>
+</aside>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
